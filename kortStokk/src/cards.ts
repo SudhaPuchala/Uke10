@@ -3,7 +3,7 @@ type Suit = 'Hearts' | 'Diamonds' | 'Clubs' | 'Spades';
 type Rank = 'Ace' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'Jack' | 'Queen' | 'King';
 export type Card = { suit: Suit; rank: Rank };
 
-export function generateOrderedDeck(): Card[] {
+export function generateDeck(): Card[] {
     const suits: Suit[] = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
     const ranks: Rank[] = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
     
@@ -27,6 +27,7 @@ export function drawCard(deck: Card[]): { newDeck: Card[]; drawnCard: Card | nul
 export function shuffleDeck(deck: Card[], seed: number): Card[] {
     const shuffled = [...deck];
     const randomSequence = generateRandomSequence(seed, deck.length);
+    console.log("Random Sequence:", randomSequence);
     
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(randomSequence[i] * (i + 1));
