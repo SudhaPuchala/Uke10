@@ -31,7 +31,7 @@ const shuffle = () => {
     <div v-if="drawnCard">
       Drawn: {{ drawnCard.rank }} of {{ drawnCard.suit }}
     </div>
-    <div>Remaining: {{ deck.length }} cards</div>
+    
     <div v-if="deck.length > 0">
       {{ deck[0].rank }} of {{ deck[0].suit }}
     </div>
